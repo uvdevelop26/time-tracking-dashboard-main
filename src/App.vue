@@ -1,48 +1,65 @@
 <script setup>
 import Header from './components/Header.vue'
-import Activity from './components/Activity.vue'
 import data from './data/data.json'
-import { ref } from 'vue';
+import { ref, reactive, computed } from 'vue';
 
-const reactiveData = ref(data)
 
-const activeStates = ref([
-  { name: "daily", state: false },
-  { name: "weekly", state: true },
-  { name: "monthly", state: false }
+//data.json
+const reactiveData = reactive(data)
+
+
+
+//array to switch the states
+const activeStates = reactive([
+    { name: "Daily", state: false },
+    { name: "Weekly", state: true },
+    { name: "Monthly", state: false }
 ])
+
+//return the current state
+const active = computed(() => {
+    const currentActive = activeStates.find(element => element.state === true)
+
+    return currentActive
+})
+
+//find the data with the current state
+/* const filteredData = reactiveData.map(element=> ) */
+
+
+
+
 
 </script>
 
 <template>
-  <main>
-  <div class="grid-container">
-    <!--User Data component -->
-    <Header :activeStates="activeStates" />
-    <!--activities -->
-    <div class="activity-card" v-for="data in reactiveData" :key="data.title">
-        <div class="data-activity">
-            <div class="current-activity">
-                <p class="activity">{{ data.title }}</p>
-                <span class="time text-bigger" v-text="`${data.timeframes.daily.current}hrs`"  />
-            </div>
-            <div class="last-week-activity">
-                <button class="btn-option">
-                    <img src="../images/icon-ellipsis.svg" alt="" srcset="">
-                </button>
-                <p class="last-week-data text-small"></p>
+    <main>
+        <div class="grid-container">
+            <!--User Data component -->
+            <Header :activeStates="activeStates" />
+            <!--activities -->
+            <div class="activity-card" v-for="data in reactiveData" :key="data.title">
+                <div class="data-activity">
+                    <div class="current-activity">
+                        <p class="activity">{{ data.title }}</p>
+                        <span class="time text-bigger">5hs </span>
+                    </div>
+                    <div class="last-week-activity">
+                        <button class="btn-option">
+                            <img src="./images/icon-ellipsis.svg" alt="" srcset="">
+                        </button>
+                        <p class="last-week-data text-small">Last week - 36hrs</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-  </div>
-
-</main>
+    </main>
 </template>
 
 <style scoped>
 .grid-container {
-  display: grid;
-  gap: 23px;
+    display: grid;
+    gap: 23px;
 }
 
 .activity-card {

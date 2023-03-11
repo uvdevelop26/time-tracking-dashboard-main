@@ -2,11 +2,11 @@
 import { ref } from 'vue';
 import { defineProps } from 'vue';
 
-
+//
 const { activeStates } = defineProps(['activeStates']);
 
 const handleStates = (item) => {
-    item.state = !item.state //este podria causar problemas
+    item.state = !item.state 
 
     const setInactive = activeStates.filter(inactive => inactive.name !== item.name)
 
@@ -96,7 +96,6 @@ const handleStates = (item) => {
     background: none;
     padding: 5px 10px 5px 10px;
     border: none;
-
     cursor: pointer;
 }
 </style>
