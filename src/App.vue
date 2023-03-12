@@ -9,7 +9,8 @@ const reactiveData = reactive(data)
 
 
 
-//array to switch the states
+//array to switch the states, this help to create the "active button" in the heather component
+//based on this array i wanna render the data
 const activeStates = reactive([
     { name: "Daily", state: false },
     { name: "Weekly", state: true },
