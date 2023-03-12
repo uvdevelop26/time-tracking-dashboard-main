@@ -2,9 +2,10 @@
 import { ref } from 'vue';
 import { defineProps } from 'vue';
 
-//
+//array with the three states for the 'active buttons'
 const { activeStates } = defineProps(['activeStates']);
 
+//set the active state to true and set the other ones to false
 const handleStates = (item) => {
     item.state = !item.state 
 

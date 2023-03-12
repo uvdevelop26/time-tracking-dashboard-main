@@ -1,7 +1,7 @@
 <script setup>
 import Header from './components/Header.vue'
 import data from './data/data.json'
-import { ref, reactive, computed } from 'vue';
+import {  reactive, computed } from 'vue';
 
 
 //data.json
@@ -23,12 +23,9 @@ const active = computed(() => {
     return currentActive
 })
 
-//find the data with the current state
-/* const filteredData = reactiveData.map(element=> ) */
+//i need to create a new object depending on the active data?
 
-
-
-
+//how do i render only de daily, weekly or monthly if i cannot do this: {{data.timeframes.active.name.current}}
 
 </script>
 
@@ -42,7 +39,7 @@ const active = computed(() => {
                 <div class="data-activity">
                     <div class="current-activity">
                         <p class="activity">{{ data.title }}</p>
-                        <span class="time text-bigger">5hs </span>
+                        <span class="time text-bigger">{{ data.timeframes.daily.current}}hrs </span>
                     </div>
                     <div class="last-week-activity">
                         <button class="btn-option">
@@ -51,6 +48,7 @@ const active = computed(() => {
                         <p class="last-week-data text-small">Last week - 36hrs</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
