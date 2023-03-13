@@ -84,20 +84,28 @@ body {
   color: var(--color-text);
   background: var(--veryDarkBlue);
   line-height: 1.6;
-  
+
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text-small{
+.text-small {
   font-size: 16px;
 }
 
-.text-big{
-  font-size: 24px
+
+.text-big {
+  font-size: 25px
 }
 
-.text-bigger{
-  font-size: 30px;
+@media(min-width: 768px) {
+  .text-small {
+    font-size: 12px;
+  }
+
+  .text-big {
+    font-size: 35px;
+  }
+
 }

@@ -7,7 +7,7 @@ const { activeStates } = defineProps(['activeStates']);
 
 //set the active state to true and set the other ones to false
 const handleStates = (item) => {
-    item.state = !item.state 
+    item.state = !item.state
 
     const setInactive = activeStates.filter(inactive => inactive.name !== item.name)
 
@@ -17,10 +17,12 @@ const handleStates = (item) => {
 }
 </script>
 <template>
-    <div class="card-header">
+    <div class="card-header row-span-2">
         <div class="data-user">
             <div class="container-user-profile">
-                <img src="../images/image-jeremy.png" alt="profile picture">
+                <div class="user-profile">
+                    <img src="../images/image-jeremy.png" alt="profile picture">
+                </div>
             </div>
             <div class="container-user-data">
                 <p class="user-tittle text-small">Report for</p>
@@ -28,10 +30,9 @@ const handleStates = (item) => {
             </div>
         </div>
         <div class="options">
-            <button v-for="item in activeStates" :key="item.name" class="btn-option text-small "
+            <button v-for="item in activeStates" :key="item.name" class="btn-option" role="button" aria-label="timeframe"
                 @click="handleStates(item)">
-                <!-- :class="[activeStates.daily ? 'active' : 'inactive']" -->
-                <span :class="[item.state ? 'active' : 'inactive']">{{ item.name }}</span>
+                <span class="text-small" :class="[item.state ? 'active' : 'inactive']">{{ item.name }}</span>
             </button>
         </div>
     </div>
@@ -53,7 +54,7 @@ const handleStates = (item) => {
     grid-template-columns: 1fr 2fr;
 }
 
-.container-user-profile {
+.user-profile {
     width: 80px;
     height: 80px;
     overflow: hidden;
@@ -61,7 +62,7 @@ const handleStates = (item) => {
     border-radius: 50%;
 }
 
-.container-user-profile img {
+.user-profile img {
     width: 100%;
 }
 
@@ -76,6 +77,7 @@ const handleStates = (item) => {
 .user-name {
     color: #ffff;
     font-weight: 300;
+    line-height: 8px;
 }
 
 .active {
@@ -98,5 +100,49 @@ const handleStates = (item) => {
     padding: 5px 10px 5px 10px;
     border: none;
     cursor: pointer;
+}
+
+
+@media(min-width: 768px) {
+    .row-span-2 {
+        grid-row: span 2;
+    }
+
+    .data-user {
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: none;
+    }
+
+    .container-user-profile {
+        padding-bottom: 18px;
+    }
+
+    .user-profile {
+        width: 70px;
+        height: 70px;
+        border: 2.5px solid #ffff;
+        border-radius: 50%;
+    }
+
+    .user-tittle {
+        padding-bottom: 4px;
+    }
+
+    .options {
+        padding: 15px 0px 15px 16px;
+        display: grid;
+        grid-auto-flow: row;
+        justify-content: start;
+
+    }
+
+    .options .btn-option {
+        background: none;
+        padding: 3px 10px 3px 10px;
+        text-align: left;
+    }
+
 }
 </style>
