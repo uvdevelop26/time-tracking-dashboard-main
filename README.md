@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/uvdevelop26/time-tracking-dashboard-main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [github repository](https://github.com/uvdevelop26/time-tracking-dashboard-main)
+- Live Site URL: [netlify live site](https://time-tracking-dashboard-uv.netlify.app/)
 
 ## My process
 
@@ -63,7 +63,7 @@ const active = computed(() => {
 
 ### Useful resources
 
-- [Example resource 1](https://lenguajejs.com/vuejs/componentes/reactividad-api/) - this helped me to differentiate between ref and reactive
+- [Vue js concepts](https://lenguajejs.com/vuejs/componentes/reactividad-api/) - this helped me to differentiate between ref and reactive
 
 ## Author
 

@@ -71,8 +71,8 @@ const active = computed(() => {
 
 .activity-card {
     background-repeat: no-repeat;
-    background-position: top -8px right 15px;
-    background-size: 3.2rem;
+    background-position: top -7px right 15px;
+    background-size: 3.3rem;
     border-radius: 20px;
     overflow: hidden;
     padding-top: 30px;

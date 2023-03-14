@@ -15,7 +15,7 @@
         "previous": 128
       }
     },
-    "image": "src/images/icon-work.svg",
+    "image": "./src/images/icon-work.svg",
     "bgcolor": "hsl(15, 100%, 70%)"
   },
   {
@@ -34,7 +34,7 @@
         "previous": 29
       }
     },
-    "image": "src/images/icon-play.svg",
+    "image": "./src/images/icon-play.svg",
     "bgcolor": "hsl(195, 74%, 62%)"
   },
   {
@@ -53,7 +53,7 @@
         "previous": 19
       }
     },
-    "image": "src/images/icon-study.svg",
+    "image": "./src/images/icon-study.svg",
     "bgcolor": "hsl(348, 100%, 68%)"
   },
   {
@@ -72,7 +72,7 @@
         "previous": 18
       }
     },
-    "image": "src/images/icon-exercise.svg",
+    "image": "./src/images/icon-exercise.svg",
     "bgcolor": "hsl(145, 58%, 55%)"
   },
   {
@@ -91,7 +91,7 @@
         "previous": 23
       }
     },
-    "image": "src/images/icon-social.svg",
+    "image": "./src/images/icon-social.svg",
     "bgcolor": "hsl(264, 64%, 52%)"
   },
   {
@@ -110,7 +110,7 @@
         "previous": 11
       }
     },
-    "image": "src/images/icon-self-care.svg",
+    "image": "./src/images/icon-self-care.svg",
     "bgcolor": "hsl(43, 84%, 65%)"
   }
 ]
